@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -143,9 +144,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-# Whitenoise serves static files efficiently in production
-if not DEBUG:
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# Whitenoise is configured via the STORAGES setting below
 
 
 # ---------------------------------------------------------------------------
@@ -182,23 +181,23 @@ if CLOUDINARY_URL:
         secure=True,  # Force HTTPS URLs
     )
 
-    # Use Cloudinary for image storage (Django 5+ STORAGES setting)
+    # Use Cloudinary for image storage
     STORAGES = {
         'default': {
             'BACKEND': 'cloudinary_storage.storage.MediaCloudinaryStorage',
         },
         'staticfiles': {
-            'BACKEND': 'django.contrib.staticfiles.storage.StaticFilesStorage',
+            'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
         },
     }
 else:
-    # Fallback to local media folder (Django 5+ STORAGES setting)
+    # Fallback to local media folder
     STORAGES = {
         'default': {
             'BACKEND': 'django.core.files.storage.FileSystemStorage',
         },
         'staticfiles': {
-            'BACKEND': 'django.contrib.staticfiles.storage.StaticFilesStorage',
+            'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
         },
     }
     MEDIA_URL = '/media/'
