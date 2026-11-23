@@ -127,27 +127,34 @@ body.dashboard #header {
     background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.9) 100%);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    color: #FFD700;
 }
 
 /* Dashboard breadcrumbs — blend with background */
 body.dashboard .breadcrumbs {
     background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.9);
+    color: #FFD700;
     border-bottom: none;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
 
 body.dashboard .breadcrumbs a {
-    color: rgba(255, 255, 255, 0.95);
+    color: #FFD700;
+}
+
+/* Dashboard index title - the "Welcome to AfroNative Admin" heading */
+body.dashboard #content h1 {
+    color: #FFD700 !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8), 2px 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 /* Dashboard footer */
 body.dashboard #footer {
     background: transparent;
-    color: rgba(255, 255, 255, 0.5);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 215, 0, 0.7);
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
 }
 
 h1 {
@@ -200,11 +207,11 @@ small {
 }
 
 #site-name .brand-text {
-    color: #fff;
+    color: #FFD700;
 }
 
 #site-name a {
-    color: #fff;
+    color: #FFD700;
     text-decoration: none;
 }
 
@@ -221,15 +228,16 @@ small {
     right: 24px;
     top: 50%;
     transform: translateY(-50%);
-    color: rgba(255, 255, 255, 0.9);
+    color: #FFD700;
     font-size: 15px;
 }
 
 .admin-user {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 215, 0, 0.15);
     padding: 6px 14px;
     border-radius: 20px;
     font-weight: 500;
+    color: #FFD700;
 }
 
 /* ---------------------------------------------------------------------------
