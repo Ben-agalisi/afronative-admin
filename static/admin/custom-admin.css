@@ -1,0 +1,924 @@
+/* ============================================================
+   AfroNative Admin - Custom Styling
+   Modern, clean design with larger fonts and card elements
+   ============================================================ */
+
+/* ---------------------------------------------------------------------------
+   0. Dashboard Background Image — Admin Home Page Only
+   --------------------------------------------------------------------------- */
+
+#container {
+    position: relative;
+    min-height: 100vh;
+}
+
+/* ---------------------------------------------------------------------------
+   1. Global Typography - Larger, more readable fonts
+   --------------------------------------------------------------------------- */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;  /* Increased from default 13px */
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5;
+}
+
+/* Dashboard background with image and lighter overlay — only on admin index page */
+body.dashboard #container {
+    background: 
+        linear-gradient(135deg, rgba(26, 26, 46, 0.45) 0%, rgba(22, 33, 62, 0.40) 50%, rgba(15, 52, 96, 0.35) 100%),
+        url('/static/admin/JPS_5202.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Make background image text readable with black text shadow overlay */
+body.dashboard #container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Make dashboard content area semi-transparent so the background shows through */
+body.dashboard #content {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* Dashboard cards get a glass-morphism effect */
+body.dashboard .module {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+body.dashboard .module:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+body.dashboard .module h2 {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Recent actions module — moved to far right, made smaller and compact */
+body.dashboard #content-related {
+    width: 200px !important;
+    margin-right: 0 !important;
+}
+
+body.dashboard.colMS {
+    margin-right: 210px !important;
+}
+
+body.dashboard #recent-actions-module {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    font-size: 12px !important;
+}
+
+body.dashboard #recent-actions-module h2 {
+    font-size: 13px !important;
+    padding: 8px 10px !important;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dashboard #recent-actions-module h3 {
+    font-size: 12px !important;
+    padding: 6px 10px !important;
+}
+
+body.dashboard #recent-actions-module ul.actionlist {
+    margin-left: 0 !important;
+    padding-left: 10px !important;
+}
+
+body.dashboard #recent-actions-module ul.actionlist li {
+    padding: 6px 8px !important;
+    font-size: 11px !important;
+}
+
+body.dashboard #recent-actions-module .mini {
+    font-size: 10px !important;
+}
+
+/* Dashboard header branding — make it pop against the background */
+body.dashboard #header {
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.9) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dashboard breadcrumbs — blend with background */
+body.dashboard .breadcrumbs {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: none;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+body.dashboard .breadcrumbs a {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Dashboard footer */
+body.dashboard #footer {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    font-size: 28px;  /* Larger headings */
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 22px;  /* Section headings */
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 18px;  /* Sub-section headings */
+    font-weight: 600;
+}
+
+p, li, td, th, label, input, select, textarea {
+    font-size: 16px;  /* All text elements larger */
+}
+
+small {
+    font-size: 14px;  /* Small text still readable */
+}
+
+/* ---------------------------------------------------------------------------
+   2. Header / Branding - Modern header with icon
+   --------------------------------------------------------------------------- */
+
+#header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    padding: 16px 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#site-name {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#site-name .brand-icon {
+    font-size: 32px;
+}
+
+#site-name .brand-text {
+    color: #fff;
+}
+
+#site-name a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#branding h1 {
+    font-size: 26px;
+}
+
+/* ---------------------------------------------------------------------------
+   3. Admin Header Info - Welcome message
+   --------------------------------------------------------------------------- */
+
+.admin-header-info {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+}
+
+.admin-user {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* ---------------------------------------------------------------------------
+   4. Navigation - Sidebar and top nav
+   --------------------------------------------------------------------------- */
+
+#nav-filter {
+    font-size: 15px;
+}
+
+.module h2 {
+    font-size: 16px;
+    padding: 10px 16px;
+    background: #1a1a2e;
+    color: #fff;
+    border-radius: 8px 8px 0 0;
+}
+
+.module h3 {
+    font-size: 15px;
+    padding: 8px 16px;
+    background: #f5f5f5;
+    color: #333;
+}
+
+.module ul {
+    padding: 8px 0;
+}
+
+.module li {
+    padding: 10px 16px;
+    font-size: 15px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.module li:hover {
+    background: #f0f4ff;
+}
+
+.module li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.module li a:hover {
+    color: #1a1a2e;
+}
+
+/* ---------------------------------------------------------------------------
+   5. Card-style Sections - The main content areas
+   --------------------------------------------------------------------------- */
+
+/* Main content container */
+#content {
+    padding: 32px;
+    max-width: 1400px;
+}
+
+/* Each module/app section becomes a card */
+.module {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8e8e8;
+    margin-bottom: 24px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.module:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Fieldsets become cards */
+fieldset {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8e8e8;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+fieldset.module {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8e8e8;
+}
+
+/* Collapsible fieldsets */
+fieldset.collapse {
+    cursor: pointer;
+}
+
+fieldset.collapsed h2 {
+    border-radius: 12px;
+}
+
+/* Fieldset headings */
+fieldset h2 {
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+    padding: 16px 24px;
+    margin: -24px -24px 24px -24px;
+    border-bottom: 2px solid #e8e8e8;
+    border-radius: 12px 12px 0 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+/* ---------------------------------------------------------------------------
+   6. Form Elements - Larger inputs and buttons
+   --------------------------------------------------------------------------- */
+
+/* Form rows */
+.form-row {
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 16px;
+}
+
+.form-row:last-child {
+    border-bottom: none;
+}
+
+/* Labels */
+label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+label p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="number"],
+input[type="date"],
+input[type="datetime-local"],
+textarea,
+select {
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: #fafafa;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="datetime-local"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #1a1a2e;
+    box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.1);
+    outline: none;
+    background: #fff;
+}
+
+/* Textarea */
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Select dropdowns */
+select {
+    min-height: 44px;
+    cursor: pointer;
+}
+
+/* Checkboxes */
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* ---------------------------------------------------------------------------
+   7. Buttons - Modern, larger buttons
+   --------------------------------------------------------------------------- */
+
+/* Submit buttons */
+.submit-row {
+    padding: 24px 0 0 0;
+    margin-top: 24px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.submit-row input {
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-right: 12px;
+}
+
+/* Default blue button */
+.submit-row input[type="submit"] {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(26, 26, 46, 0.3);
+}
+
+.submit-row input[type="submit"]:hover {
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+    box-shadow: 0 4px 12px rgba(26, 26, 46, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Secondary button */
+.submit-row .default {
+    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+}
+
+/* Delete button */
+.deletelink-box {
+    float: right;
+}
+
+.deletelink {
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    background: #e74c3c;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.deletelink:hover {
+    background: #c0392b;
+    transform: translateY(-1px);
+}
+
+/* ---------------------------------------------------------------------------
+   8. Tables - Data tables with card styling
+   --------------------------------------------------------------------------- */
+
+/* Result table */
+.resultlist {
+    font-size: 15px;
+}
+
+/* Table headers */
+thead th {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 16px;
+    background: #f8f9ff;
+    color: #1a1a2e;
+    border-bottom: 2px solid #e8e8e8;
+}
+
+/* Table cells */
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+}
+
+/* Table rows */
+tr {
+    transition: background 0.2s;
+}
+
+tr:hover {
+    background: #f8f9ff;
+}
+
+/* Alternating rows */
+tr:nth-child(even) {
+    background: #fafafa;
+}
+
+tr:nth-child(even):hover {
+    background: #f0f4ff;
+}
+
+/* ---------------------------------------------------------------------------
+   9. Inline Forms - EventSpecs, GalleryPhotos
+   --------------------------------------------------------------------------- */
+
+/* Inline container */
+.inline-group {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8e8e8;
+    overflow: hidden;
+}
+
+.inline-group thead th {
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+    padding: 14px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.inline-group td {
+    padding: 12px 16px;
+}
+
+.inline-group tfoot {
+    background: #f8f9ff;
+}
+
+/* Add another row button */
+.add-row {
+    padding: 12px 16px;
+}
+
+.add-row a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.2s;
+}
+
+.add-row a:hover {
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+    transform: translateY(-1px);
+}
+
+/* ---------------------------------------------------------------------------
+   10. Messages / Alerts - Success, error, info
+   --------------------------------------------------------------------------- */
+
+.messagelist {
+    margin: 24px 0;
+}
+
+.messagelist li {
+    padding: 16px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.errornote {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+    padding: 16px 24px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+.warning {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+/* ---------------------------------------------------------------------------
+   11. Description Text - Help text under fieldsets
+   --------------------------------------------------------------------------- */
+
+fieldset .description {
+    font-size: 15px;
+    color: #666;
+    font-style: italic;
+    padding: 12px 16px;
+    background: #f8f9ff;
+    border-radius: 8px;
+    border-left: 4px solid #1a1a2e;
+    margin-top: 16px;
+}
+
+/* ---------------------------------------------------------------------------
+   12. Search Bar - Larger, more visible
+   --------------------------------------------------------------------------- */
+
+#toolbar {
+    padding: 24px 0;
+}
+
+#toolbar input[type="text"] {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    width: 300px;
+}
+
+#toolbar input[type="submit"] {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+/* ---------------------------------------------------------------------------
+   13. Filters - Sidebar filters
+   --------------------------------------------------------------------------- */
+
+#changelist-filter {
+    font-size: 15px;
+}
+
+#changelist-filter h2 {
+    font-size: 16px;
+    padding: 12px 16px;
+    background: #1a1a2e;
+    color: #fff;
+    border-radius: 8px 8px 0 0;
+}
+
+#changelist-filter h3 {
+    font-size: 15px;
+    padding: 10px 16px;
+    background: #f5f5f5;
+    font-weight: 600;
+}
+
+#changelist-filter ul {
+    padding: 8px 0;
+}
+
+#changelist-filter li {
+    padding: 10px 16px;
+    font-size: 15px;
+}
+
+#changelist-filter li.selected {
+    background: #f0f4ff;
+    font-weight: 600;
+}
+
+#changelist-filter a {
+    color: #333;
+    text-decoration: none;
+}
+
+#changelist-filter a:hover {
+    color: #1a1a2e;
+}
+
+/* ---------------------------------------------------------------------------
+   14. Breadcrumbs - Navigation path
+   --------------------------------------------------------------------------- */
+
+.breadcrumbs {
+    font-size: 15px;
+    padding: 16px 32px;
+    background: #f8f9ff;
+    border-bottom: 1px solid #e8e8e8;
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+.breadcrumbs a {
+    color: #1a1a2e;
+    font-weight: 500;
+}
+
+/* ---------------------------------------------------------------------------
+   15. Image Previews - Thumbnails in admin
+   --------------------------------------------------------------------------- */
+
+/* Image thumbnail in list view */
+td fieldset {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Image preview in form */
+.vImageField {
+    max-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------------------------------------------------------------
+   16. Dashboard - Home page cards
+   --------------------------------------------------------------------------- */
+
+/* Dashboard app sections */
+.dashboard .module {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8e8e8;
+    margin-bottom: 24px;
+}
+
+.dashboard .module h2 {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    padding: 16px 24px;
+    margin: -12px -24px 16px -24px;
+    border-radius: 12px 12px 0 0;
+    font-size: 18px;
+}
+
+.dashboard .module h3 {
+    background: #f8f9ff;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.dashboard .module table {
+    font-size: 15px;
+}
+
+.dashboard .module tr {
+    padding: 10px 0;
+}
+
+/* Recent actions */
+#recent-actions-module {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------------------------------------------------------------------------
+   17. Footer - Bottom of page
+   --------------------------------------------------------------------------- */
+
+#footer {
+    padding: 20px 32px;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    border-top: 1px solid #e8e8e8;
+    margin-top: 40px;
+}
+
+/* ---------------------------------------------------------------------------
+   18. Login Page - Custom styled login
+   --------------------------------------------------------------------------- */
+
+.login {
+    background: #f5f5f5;
+}
+
+.login #header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.login #content {
+    padding: 40px;
+}
+
+.login .module {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.login .module h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.login .module p {
+    font-size: 16px;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.login input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.login input[type="submit"]:hover {
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+}
+
+/* ---------------------------------------------------------------------------
+   19. Responsive Design - Mobile friendly
+   --------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #content {
+        padding: 16px;
+    }
+
+    fieldset {
+        padding: 16px;
+    }
+
+    fieldset h2 {
+        font-size: 18px;
+        padding: 12px 16px;
+        margin: -16px -16px 16px -16px;
+    }
+
+    .submit-row input {
+        display: block;
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .admin-header-info {
+        position: static;
+        transform: none;
+        margin-top: 8px;
+        text-align: center;
+    }
+
+    #site-name {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* ---------------------------------------------------------------------------
+   20. Color Scheme Summary
+   ---------------------------------------------------------------------------
+   Primary: #1a1a2e (Dark navy)
+   Secondary: #16213e (Lighter navy)
+   Accent: #0f3460 (Blue accent)
+   Background: #f5f5f5 (Light gray)
+   Card background: #fff (White)
+   Text: #333 (Dark gray)
+   Success: #d4edda / #155724
+   Error: #f8d7da / #721c24
+   Info: #d1ecf1 / #0c5460
+   Warning: #fff3cd / #856404
+   --------------------------------------------------------------------------- */

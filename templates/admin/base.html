@@ -1,0 +1,20 @@
+{% extends "admin/base.html" %}
+
+{% block extrastyle %}
+    {% load static %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'admin/custom-admin.css' %}">
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <span class="brand-icon">🎵</span>
+    <span class="brand-text">{{ site_header|default:'AfroNative Admin' }}</span>
+</h1>
+{% endblock %}
+
+{% block nav-global %}
+<div class="admin-header-info">
+    <span class="admin-user">Welcome, {{ user.get_full_name|default:user.username }}</span>
+</div>
+{% endblock %}
